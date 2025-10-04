@@ -7,7 +7,7 @@ public class CharacterFactory {
             Hobbit.class, Elf.class, King.class, Knight.class
     };
 
-    public static Character createCharacter() {   // <-- зробив static
+    public static Character createCharacter() {
         try {
             int idx = rand.nextInt(characterTypes.length);
             return (Character) characterTypes[idx].getDeclaredConstructor().newInstance();
@@ -15,5 +15,4 @@ public class CharacterFactory {
             throw new RuntimeException("Error creating character", e);
         }
     }
-}
-
+} 
